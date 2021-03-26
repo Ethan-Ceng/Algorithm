@@ -26,9 +26,28 @@ def chooseSort(list):
         # swap value
         list[i], list[minIndex] = list[minIndex], list[i]
 
-    print('排序后数组：', list)
+    print('选择排序：', list)
+
+
+
+# 插入排序 O(n) ~ O(n^2)
+# array[0, i) 已排序 array[i...n) 未排序
+# 把 arr[i] 放到合适的位置
+
+def insertSort(list):
+    for i in range(len(list)):
+        key = list[i]
+        j = i - 1
+        while j >= 0 and key < list[j]:
+            list[j+1] = list[j]
+            j -= 1
+        
+        list[j+1] = key
+
+    print('插入排序', list)
+
 
 
 list = [64, 25, 12, 22, 11]
 
-chooseSort(list)
+insertSort(list)
